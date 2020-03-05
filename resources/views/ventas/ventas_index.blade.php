@@ -21,7 +21,7 @@
                         <td>{{$venta->created_at}}</td>
                         <td>${{number_format($venta->total, 2)}}</td>
                         <td>
-                            <a class="btn btn-info" href="{{route("ventas.show", $venta)}}">
+                            <a class="btn btn-info" href="{{route("ventas.ticket", ["id"=>$venta->id])}}">
                                 <i class="fa fa-print"></i>
                             </a>
                         </td>

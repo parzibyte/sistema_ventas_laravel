@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource("productos", "ProductosController");
+Route::get("/ventas/ticket", "VentasController@ticket")->name("ventas.ticket");
 Route::resource("ventas", "VentasController");
 Route::get("/vender", "VenderController@index")->name("vender.index");
 Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");

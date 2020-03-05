@@ -4,14 +4,14 @@
     <div class="row">
         <div class="col-12">
             <h1>Detalle de venta #{{$venta->id}}</h1>
+            @include("notificacion")
             <a class="btn btn-info" href="{{route("ventas.index")}}">
                 <i class="fa fa-arrow-left"></i>&nbsp;Volver
             </a>
-            <a class="btn btn-success" href="{{route("ventas.index")}}">
+            <a class="btn btn-success" href="{{route("ventas.ticket", ["id" => $venta->id])}}">
                 <i class="fa fa-print"></i>&nbsp;Ticket
             </a>
             <h2>Productos</h2>
-            @include("notificacion")
             <table class="table table-bordered">
                 <thead>
                 <tr>
