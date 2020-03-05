@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource("productos", "ProductosController");
-Route::resource("vender", "VenderController");
+Route::get("/vender", "VenderController@index")->name("vender.index");
 Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");
 Route::delete("/productoDeVenta", "VenderController@quitarProductoDeVenta")->name("quitarProductoDeVenta");
 Route::post("/cancelarVenta", "VenderController@cancelarVenta")->name("cancelarVenta");
