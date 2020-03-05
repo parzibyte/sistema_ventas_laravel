@@ -123,6 +123,11 @@ class VenderController extends Controller
      */
     public function index()
     {
-        return view("vender.vender");
+        $total = 0;
+        foreach ($this->obtenerProductos() as $producto) {
+            $total += $producto->cantidad * $producto->precio_venta;
+        }
+        return view("vender.vender", ["total" => $total,
+        ]);
     }
 }
