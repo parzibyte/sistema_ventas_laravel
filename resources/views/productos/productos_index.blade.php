@@ -12,6 +12,7 @@
                     <th>Descripción</th>
                     <th>Precio de compra</th>
                     <th>Precio de venta</th>
+                    <th>Utilidad</th>
                     <th>Existencia</th>
 
                     <th>Editar</th>
@@ -24,6 +25,7 @@
                         <td>{{$producto->descripcion}}</td>
                         <td>{{$producto->precio_compra}}</td>
                         <td>{{$producto->precio_venta}}</td>
+                        <td>{{$producto->precio_venta - $producto->precio_compra}}</td>
                         <td>{{$producto->existencia}}</td>
                         <td>
                             <a class="btn btn-warning" href="{{route("productos.edit",[$producto])}}">
