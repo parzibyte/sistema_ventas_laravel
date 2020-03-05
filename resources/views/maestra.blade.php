@@ -35,7 +35,7 @@ https://parzibyte.me/blog
                 <a class="nav-link" href="{{route("vender.index")}}">Vender&nbsp;<i class="fa fa-cart-plus"></i></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Ventas&nbsp;<i class="fa fa-list"></i></a>
+                <a class="nav-link" href="{{route("ventas.index")}}">Ventas&nbsp;<i class="fa fa-list"></i></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">Acerca de&nbsp;<i class="fa fa-info"></i></a>
