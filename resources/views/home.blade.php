@@ -1,8 +1,9 @@
 @extends('maestra')
-@section("titulo")
-    {{__("Dashboard")}}
-@endsection
+@section("titulo", "Inicio")
 @section('contenido')
+    <div class="col-12 text-center">
+        <h1>Bienvenido, {{Auth::user()->name}}</h1>
+    </div>
     <div class="card-columns">
         <a href="{{route("productos.index")}}" style="color: black;">
             <div class="card text-center">
