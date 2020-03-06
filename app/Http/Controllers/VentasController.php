@@ -152,6 +152,8 @@ class VentasController extends Controller
      */
     public function destroy(Venta $venta)
     {
-        //
+        $venta->delete();
+        return redirect()->route("ventas.index")
+        ->with("mensaje", "Venta eliminada");
     }
 }
