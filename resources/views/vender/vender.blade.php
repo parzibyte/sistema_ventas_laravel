@@ -8,7 +8,9 @@
             <form action="{{route("agregarProductoVenta")}}" method="post">
                 @csrf
                 <div class="form-group">
-                    <input required autofocus name="codigo" type="text" class="form-control"
+                    <label for="codigo">Código de barras</label>
+                    <input id="codigo" autocomplete="off" required autofocus name="codigo" type="text"
+                           class="form-control"
                            placeholder="Código de barras">
                 </div>
             </form>
