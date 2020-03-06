@@ -52,6 +52,8 @@
     <style>
         body {
             padding-top: 70px;
+            /*Para la barra inferior fija*/
+            padding-bottom: 70px;
         }
     </style>
 </head>
