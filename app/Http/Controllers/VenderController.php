@@ -95,12 +95,27 @@ class VenderController extends Controller
 
     private function agregarProductoACarrito($producto)
     {
+        if ($producto->existencia <= 0) {
+            return redirect()->route("vender.index")
+                ->with([
+                    "mensaje" => "No hay existencias del producto",
+                    "tipo" => "danger"
+                ]);
+        }
         $productos = $this->obtenerProductos();
         $posibleIndice = $this->buscarIndiceDeProducto($producto->codigo_barras, $productos);
+        // Es decir, producto no fue encontrado
         if ($posibleIndice === -1) {
             $producto->cantidad = 1;
             array_push($productos, $producto);
         } else {
+            if ($productos[$posibleIndice]->cantidad + 1 > $producto->existencia) {
+                return redirect()->route("vender.index")
+                    ->with([
+                        "mensaje" => "No se pueden agregar más productos de este tipo, se quedarían sin existencia",
+                        "tipo" => "danger"
+                    ]);
+            }
             $productos[$posibleIndice]->cantidad++;
         }
         $this->guardarProductos($productos);
