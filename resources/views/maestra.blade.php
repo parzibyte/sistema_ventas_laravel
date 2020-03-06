@@ -30,12 +30,12 @@ https://parzibyte.me/blog
         <ul class="navbar-nav mr-auto">
             @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('register') }}">
-                        {{ __('Register') }}
+                        Registro
                     </a>
                 </li>
             @else
@@ -57,7 +57,7 @@ https://parzibyte.me/blog
             @auth
                 <li class="nav-item">
                     <a href="{{route("logout")}}" class="nav-link">
-                        {{__("Logout")}} ({{ Auth::user()->name }})
+                        Salir ({{ Auth::user()->name }})
                     </a>
                 </li>
             @endauth
