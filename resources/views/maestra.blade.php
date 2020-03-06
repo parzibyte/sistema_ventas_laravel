@@ -62,10 +62,11 @@ https://parzibyte.me/blog
                 </li>
             @endauth
             <li class="nav-item">
-                <a class="nav-link" href="#">Soporte&nbsp;<i class="fa fa-hands-helping"></i></a>
+                <a class="nav-link" href="https://parzibyte.me/blog/contrataciones-ayuda/">Soporte&nbsp;<i
+                        class="fa fa-hands-helping"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Acerca de&nbsp;<i class="fa fa-info"></i></a>
+                <a class="nav-link" href="{{route("acerca_de")}}">Acerca de&nbsp;<i class="fa fa-info"></i></a>
             </li>
         </ul>
     </div>
@@ -80,6 +81,10 @@ https://parzibyte.me/blog
         <i class="fa fa-heart" style="color: #ff2b56;"></i>
         por
         <a class="text-white" href="//parzibyte.me/blog">Parzibyte</a>
+        &nbsp;|&nbsp;
+        <a target="_blank" class="text-white" href="//github.com/parzibyte/sistema_ventas_laravel">
+            <i class="fab fa-github"></i>
+        </a>
     </span>
 </footer>
 </body>

@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect()->route("home");
 });
+Route::get("/acerca-de", function () {
+    return view("misc.acerca_de");
+})->name("acerca_de");
 
 
 Auth::routes([

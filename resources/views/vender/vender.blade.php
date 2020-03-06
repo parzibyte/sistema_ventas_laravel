@@ -3,7 +3,7 @@
 @section("contenido")
     <div class="row">
         <div class="col-12">
-            <h1>Nueva venta</h1>
+            <h1>Nueva venta <i class="fa fa-cart-plus"></i></h1>
             @include("notificacion")
             <form action="{{route("agregarProductoVenta")}}" method="post">
                 @csrf

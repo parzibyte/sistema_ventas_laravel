@@ -3,7 +3,7 @@
 @section("contenido")
     <div class="row">
         <div class="col-12">
-            <h1>Ventas</h1>
+            <h1>Ventas <i class="fa fa-list"></i></h1>
             @include("notificacion")
             <table class="table table-bordered">
                 <thead>
