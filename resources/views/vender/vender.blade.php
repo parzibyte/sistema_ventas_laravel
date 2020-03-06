@@ -54,37 +54,39 @@
             @endif
             @if(session("productos") !== null)
                 <h2>Total: ${{number_format($total, 2)}}</h2>
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Código de barras</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Quitar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach(session("productos") as $producto)
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
                         <tr>
-                            <td>{{$producto->codigo_barras}}</td>
-                            <td>{{$producto->descripcion}}</td>
-                            <td>${{number_format($producto->precio_venta, 2)}}</td>
-                            <td>{{$producto->cantidad}}</td>
-                            <td>
-                                <form action="{{route("quitarProductoDeVenta")}}" method="post">
-                                    @method("delete")
-                                    @csrf
-                                    <input type="hidden" name="indice" value="{{$loop->index}}">
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
+                            <th>Código de barras</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Quitar</th>
                         </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        @foreach(session("productos") as $producto)
+                            <tr>
+                                <td>{{$producto->codigo_barras}}</td>
+                                <td>{{$producto->descripcion}}</td>
+                                <td>${{number_format($producto->precio_venta, 2)}}</td>
+                                <td>{{$producto->cantidad}}</td>
+                                <td>
+                                    <form action="{{route("quitarProductoDeVenta")}}" method="post">
+                                        @method("delete")
+                                        @csrf
+                                        <input type="hidden" name="indice" value="{{$loop->index}}">
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
             @else
                 <h2>Aquí aparecerán los productos de la venta
                     <br>
