@@ -21,12 +21,12 @@ https://parzibyte.me/blog
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" target="_blank" href="//parzibyte.me/blog">{{env("APP_NAME")}}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#miNavbar" aria-controls="miNavbar"
-            aria-expanded="false" aria-label="Mostrar u ocultar menú">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            id="botonMenu" aria-label="Mostrar u ocultar menú">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="miNavbar">
+    <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav mr-auto">
             @guest
                 <li class="nav-item">
@@ -71,6 +71,16 @@ https://parzibyte.me/blog
         </ul>
     </div>
 </nav>
+<script type="text/javascript">
+    // Tomado de https://parzibyte.me/blog/2019/06/26/menu-responsivo-bootstrap-4-sin-dependencias/
+    document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.querySelector("#menu"),
+            botonMenu = document.querySelector("#botonMenu");
+        if (menu) {
+            botonMenu.addEventListener("click", () => menu.classList.toggle("show"));
+        }
+    });
+</script>
 <main class="container-fluid">
     @yield("contenido")
 </main>
