@@ -37,3 +37,7 @@ Pequeño punto de venta con Laravel 7.
 **Soporte:** Icons made by [dDara](https://www.flaticon.com/authors/ddara  "dDara") from [www.flaticon.com](https://www.flaticon.com/  "Flaticon")
 
 **Acerca de:** Icons made by [inipagistudio](https://www.flaticon.com/authors/inipagistudio  "inipagistudio") from [www.flaticon.com](https://www.flaticon.com/  "Flaticon")
+
+**Usuarios:** Icons made by [Freepik](https://www.flaticon.com/authors/freepik  "Freepik") from [www.flaticon.com](https://www.flaticon.com/  "Flaticon")
+
+**Clientes:** Icons made by [Freepik](https://www.flaticon.com/authors/freepik "Freepik") from [www.flaticon.com](https://www.flaticon.com/ "Flaticon")
