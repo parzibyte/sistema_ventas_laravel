@@ -36,6 +36,7 @@ Route::get("/logout", function () {
 
 Route::middleware("auth")
     ->group(function () {
+        Route::resource("usuarios", "UserController")->parameters(["usuarios" => "user"]);
         Route::resource("productos", "ProductosController");
         Route::get("/ventas/ticket", "VentasController@ticket")->name("ventas.ticket");
         Route::resource("ventas", "VentasController");
