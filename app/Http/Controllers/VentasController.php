@@ -1,22 +1,22 @@
 <?php
 /*
 
-  ____          _____               _ _           _       
- |  _ \        |  __ \             (_) |         | |      
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___ 
+  ____          _____               _ _           _
+ |  _ \        |  __ \             (_) |         | |
+ | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___
  |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
  | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
  |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |        
-        |___/                               |___/         
-    
+         __/ |                               __/ |
+        |___/                               |___/
+
     Blog:       https://parzibyte.me/blog
     Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
     Contacto:   https://parzibyte.me/blog/contacto/
-    
+
     Copyright (c) 2020 Luis Cabrera Benito
     Licenciado bajo la licencia MIT
-    
+
     El texto de arriba debe ser incluido en cualquier redistribucion
 */ ?>
 <?php
@@ -77,7 +77,7 @@ class VentasController extends Controller
     {
         $ventasConTotales = Venta::join("productos_vendidos", "productos_vendidos.id_venta", "=", "ventas.id")
             ->select("ventas.*", DB::raw("sum(productos_vendidos.cantidad * productos_vendidos.precio) as total"))
-            ->groupBy("ventas.id", "ventas.created_at", "ventas.updated_at")
+            ->groupBy("ventas.id", "ventas.created_at", "ventas.updated_at", "ventas.id_cliente")
             ->get();
         return view("ventas.ventas_index", ["ventas" => $ventasConTotales,]);
     }

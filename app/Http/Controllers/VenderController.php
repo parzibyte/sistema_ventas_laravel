@@ -35,16 +35,17 @@ class VenderController extends Controller
     public function terminarOCancelarVenta(Request $request)
     {
         if ($request->input("accion") == "terminar") {
-            return $this->terminarVenta();
+            return $this->terminarVenta($request);
         } else {
             return $this->cancelarVenta();
         }
     }
 
-    public function terminarVenta()
+    public function terminarVenta(Request $request)
     {
         // Crear una venta
         $venta = new Venta();
+        $venta->id_cliente = $request->input("id_cliente");
         $venta->saveOrFail();
         $idVenta = $venta->id;
         $productos = $this->obtenerProductos();
