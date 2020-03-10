@@ -42,8 +42,10 @@ class VentasController extends Controller
         $impresora->setEmphasis(true);
         $impresora->text("Ticket de venta\n");
         $impresora->text($venta->created_at . "\n");
-        $impresora->text("https://parzibyte.me/blog\n");
         $impresora->setEmphasis(false);
+        $impresora->text("Cliente: ");
+        $impresora->text($venta->cliente->nombre . "\n");
+        $impresora->text("\nhttps://parzibyte.me/blog\n");
         $impresora->text("\n===============================\n");
         $total = 0;
         foreach ($venta->productos as $producto) {
@@ -154,6 +156,6 @@ class VentasController extends Controller
     {
         $venta->delete();
         return redirect()->route("ventas.index")
-        ->with("mensaje", "Venta eliminada");
+            ->with("mensaje", "Venta eliminada");
     }
 }
