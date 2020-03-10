@@ -23,6 +23,7 @@ ____          _____               _ _           _
 @section("contenido")
     <div class="row">
         <div class="col-12">
+            <h1>Editar usuario</h1>
             <form method="POST" action="{{route("usuarios.update", [$usuario])}}">
                 @method("PUT")
                 @csrf

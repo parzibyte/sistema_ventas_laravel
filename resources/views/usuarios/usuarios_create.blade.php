@@ -23,6 +23,7 @@ ____          _____               _ _           _
 @section("contenido")
     <div class="row">
         <div class="col-12">
+            <h1>Agregar usuario</h1>
             <form method="POST" action="{{route("usuarios.store")}}">
                 @csrf
                 <div class="form-group">
