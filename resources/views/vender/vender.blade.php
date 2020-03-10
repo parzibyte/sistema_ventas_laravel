@@ -1,21 +1,21 @@
 {{--
 
-  ____          _____               _ _           _       
- |  _ \        |  __ \             (_) |         | |      
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___ 
+  ____          _____               _ _           _
+ |  _ \        |  __ \             (_) |         | |
+ | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___
  |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
  | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
  |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |        
-        |___/                               |___/         
-    
+         __/ |                               __/ |
+        |___/                               |___/
+
     Blog:       https://parzibyte.me/blog
     Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
     Contacto:   https://parzibyte.me/blog/contacto/
-    
+
     Copyright (c) 2020 Luis Cabrera Benito
     Licenciado bajo la licencia MIT
-    
+
     El texto de arriba debe ser incluido en cualquier redistribucion
 --}}
 @extends("maestra")
@@ -25,33 +25,42 @@
         <div class="col-12">
             <h1>Nueva venta <i class="fa fa-cart-plus"></i></h1>
             @include("notificacion")
-            <form action="{{route("agregarProductoVenta")}}" method="post">
-                @csrf
-                <div class="form-group">
-                    <label for="codigo">Código de barras</label>
-                    <input id="codigo" autocomplete="off" required autofocus name="codigo" type="text"
-                           class="form-control"
-                           placeholder="Código de barras">
-                </div>
-            </form>
-            @if(session("productos") !== null)
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-auto">
-                            <form action="{{route("terminarVenta")}}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-success">Terminar venta</button>
-                            </form>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <form action="{{route("terminarOCancelarVenta")}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="id_cliente">Cliente</label>
+                            <select required class="form-control" name="id_cliente" id="id_cliente">
+                                @foreach($clientes as $cliente)
+                                    <option value="{{$cliente->id}}">{{$cliente->nombre}}</option>
+                                @endforeach
+                            </select>
                         </div>
-                        <div class="col-auto">
-                            <form action="{{route("cancelarVenta")}}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Cancelar venta</button>
-                            </form>
-                        </div>
-                    </div>
+                        @if(session("productos") !== null)
+                            <div class="form-group">
+                                <button name="accion" value="terminar" type="submit" class="btn btn-success">Terminar
+                                    venta
+                                </button>
+                                <button name="accion" value="cancelar" type="submit" class="btn btn-danger">Cancelar
+                                    venta
+                                </button>
+                            </div>
+                        @endif
+                    </form>
                 </div>
-            @endif
+                <div class="col-12 col-md-6">
+                    <form action="{{route("agregarProductoVenta")}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="codigo">Código de barras</label>
+                            <input id="codigo" autocomplete="off" required autofocus name="codigo" type="text"
+                                   class="form-control"
+                                   placeholder="Código de barras">
+                        </div>
+                    </form>
+                </div>
+            </div>
             @if(session("productos") !== null)
                 <h2>Total: ${{number_format($total, 2)}}</h2>
                 <div class="table-responsive">

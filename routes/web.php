@@ -44,6 +44,5 @@ Route::middleware("auth")
         Route::get("/vender", "VenderController@index")->name("vender.index");
         Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");
         Route::delete("/productoDeVenta", "VenderController@quitarProductoDeVenta")->name("quitarProductoDeVenta");
-        Route::post("/cancelarVenta", "VenderController@cancelarVenta")->name("cancelarVenta");
-        Route::post("/terminarVenta", "VenderController@terminarVenta")->name("terminarVenta");
+        Route::post("/terminarOCancelarVenta", "VenderController@terminarOCancelarVenta")->name("terminarOCancelarVenta");
     });
