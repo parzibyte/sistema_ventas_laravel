@@ -74,6 +74,11 @@
             <strong>Acerca de:&nbsp;</strong>Icons made by <a href="https://www.flaticon.com/authors/inipagistudio"
                                                               title="inipagistudio">inipagistudio</a> from <a
                 href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+                <br>
+                <strong>Usuarios:</strong> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" rel="nofollow">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" rel="nofollow">www.flaticon.com</a>
+                <br>
+                <strong>Clientes:</strong> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" rel="nofollow">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" rel="nofollow">www.flaticon.com</a>
+                <br>
         </div>
     </div>
 @endsection
