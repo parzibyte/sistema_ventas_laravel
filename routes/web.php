@@ -11,7 +11,7 @@ Route::get("/acerca-de", function () {
     return view("misc.acerca_de");
 })->name("acerca_de.index");
 Route::get("/soporte", function(){
-    return redirect("https://parzibyte.me/blog");
+    return redirect("https://parzibyte.me/blog/contrataciones-ayuda/");
 })->name("soporte.index");
 
 Auth::routes([
