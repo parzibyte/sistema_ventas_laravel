@@ -1,6 +1,6 @@
 ## POS con Laravel open source
 Pequeño punto de venta con Laravel 7.
-![Bienvenida al sistema de ventas escrito en Laravel](https://parzibyte.me/blog/wp-content/uploads/2020/03/Bienvenida-al-sistema-de-ventas-%C3%8Dndice-con-opciones-para-vender-ver-productos-o-ventas.png)
+![Bienvenida al sistema de ventas escrito en Laravel](https://parzibyte.me/blog/wp-content/uploads/2020/03/Inicio-Punto-de-venta-con-Laravel-usuarios-y-clientes.png)
 
 ## Características
 
@@ -18,6 +18,8 @@ Pequeño punto de venta con Laravel 7.
 ## Tutorial
 
 [Ver tutorial en mi blog](https://parzibyte.me/blog/2020/03/06/sistema-ventas-laravel-bootstrap-mysql-open-source/)
+
+[Parte 2 con clientes y usuarios](https://parzibyte.me/blog/2020/03/10/laravel-pos-clientes-usuarios/)
 
 ![Ticket de venta](https://parzibyte.me/blog/wp-content/uploads/2020/03/Ticket-de-venta-impreso-desde-PDV-con-Laravel.jpg)
 
