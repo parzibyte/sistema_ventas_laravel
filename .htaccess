@@ -1,0 +1,13 @@
+Options -Indexes
+
+# Si quieres, agrega más extensiones entre los paréntesis, separadas por |
+<Files ~ "\.(env|json|config.js|md|gitignore|gitattributes|lock)$">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Aquí especifica nombres de archivos igualmente dentro de los paréntesis, separados por |
+<Files ~ "(artisan)$">
+    Order allow,deny
+    Deny from all
+</Files>
