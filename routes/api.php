@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Producto;
+use App\Cliente;
+use App\Venta;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +39,7 @@ Route::group(['prefix' => 'auth'], function () {
             en lugar de separarlas a otro archivo o invocar un controlador
         */
         Route::post("/producto", function(Request $request){
-            // return $request->input();
             $producto = new Producto($request->input());
-            // return $producto;
             $producto->saveOrFail();
             return response()->json(["data" => "true"]);
         });
@@ -58,5 +58,44 @@ Route::group(['prefix' => 'auth'], function () {
             $producto->delete();
             return response()->json(true);
         });
+
+        // Clientes
+        Route::post("/cliente", function(Request $request){
+            $cliente = new Cliente($request->input());
+            $cliente->saveOrFail();
+            return response()->json(["data" => "true"]);
+        });
+        Route::get("/cliente/{id}", function($id){
+            $cliente = Cliente::findOrFail($id);
+            return response()->json($cliente);
+        });
+        Route::put("/cliente", function(Request $request){
+            $cliente = Cliente::findOrFail($request->input("id"));
+            $cliente->fill($request->input());
+            $cliente->saveOrFail();
+            return response()->json(true);
+        });
+        Route::delete("/cliente/{id}", function($id){
+            $cliente = Cliente::findOrFail($id);
+            $cliente->delete();
+            return response()->json(true);
+        });
+
+        // Ventas
+        Route::post("/venta", function(Request $request){
+            $venta = new Venta($request->input());
+            $venta->saveOrFail();
+            return response()->json(["data" => "true"]);
+        });
+        Route::get("/cliente/{id}", function($id){
+            $cliente = Cliente::findOrFail($id);
+            return response()->json($cliente);
+        });
+        Route::delete("/venta/{id}", function($id){
+            $venta = Venta::findOrFail($id);
+            $venta->delete();
+            return response()->json(true);
+        });
+
     });
 });
