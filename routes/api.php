@@ -87,7 +87,7 @@ Route::group(['prefix' => 'auth'], function () {
 
         // Ventas
         Route::get("ventas", function () {
-            return response()->json(Venta::all());
+            return response()->json(Venta::with("productos")->get());
         });
         Route::post("/venta", function(Request $request){
             $venta = new Venta($request->input());
