@@ -32,7 +32,7 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('user', 'AuthController@user');
 
         Route::get("productos", function () {
-            return response()->json(\App\Producto::all());
+            return response()->json(Producto::all());
         });
         /*
             Si existe un dios, que me perdone por dejar todas las peticiones aquí
@@ -60,6 +60,10 @@ Route::group(['prefix' => 'auth'], function () {
         });
 
         // Clientes
+        
+        Route::get("clientes", function () {
+            return response()->json(Cliente::all());
+        });
         Route::post("/cliente", function(Request $request){
             $cliente = new Cliente($request->input());
             $cliente->saveOrFail();
@@ -82,6 +86,9 @@ Route::group(['prefix' => 'auth'], function () {
         });
 
         // Ventas
+        Route::get("ventas", function () {
+            return response()->json(Venta::all());
+        });
         Route::post("/venta", function(Request $request){
             $venta = new Venta($request->input());
             $venta->saveOrFail();
