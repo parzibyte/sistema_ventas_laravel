@@ -94,9 +94,9 @@ Route::group(['prefix' => 'auth'], function () {
             $venta->saveOrFail();
             return response()->json(["data" => "true"]);
         });
-        Route::get("/cliente/{id}", function($id){
-            $cliente = Cliente::findOrFail($id);
-            return response()->json($cliente);
+        Route::get("/venta/{id}", function($id){
+            $venta = Venta::with("productos")->findOrFail($id);
+            return response()->json($venta);
         });
         Route::delete("/venta/{id}", function($id){
             $venta = Venta::findOrFail($id);
