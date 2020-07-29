@@ -48,9 +48,9 @@
                     <tr>
                         <td>{{$producto->descripcion}}</td>
                         <td>{{$producto->codigo_barras}}</td>
-                        <td>${{number_format($producto->precio)}}</td>
+                        <td>${{number_format($producto->precio, 2)}}</td>
                         <td>{{$producto->cantidad}}</td>
-                        <td>${{number_format($producto->cantidad * $producto->precio)}}</td>
+                        <td>${{number_format($producto->cantidad * $producto->precio, 2)}}</td>
                     </tr>
                 @endforeach
                 </tbody>
